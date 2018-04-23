@@ -1,0 +1,78 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SlideView_ex"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Layout="using:DevExpress.UI.Xaml.Layout"
+    xmlns:dxEditors ="using:DevExpress.UI.Xaml.Editors"
+    xmlns:data="using:Data"
+    x:Class="SlideView_ex.MainPage"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <data:WritersData x:Key="sampleWritersData" />
+    </Page.Resources>
+
+    <Grid DataContext="{StaticResource sampleWritersData}"
+        Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+        Height="500"
+        VerticalAlignment="Center">
+
+        <!--Bind SlideView to a collection of items-->
+        <Layout:SlideView ItemsSource="{Binding DataSource}">
+            
+
+            <!--The template to visualize an item's header-->
+            <Layout:SlideView.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </Layout:SlideView.HeaderTemplate>
+            <!--The template to visualize an item's contents-->
+            <Layout:SlideView.ItemTemplate>
+                <DataTemplate>
+                    <Layout:LayoutControl Width="400" Orientation="Vertical" HorizontalAlignment="Center" Margin="10,10">
+
+                        <Layout:LayoutControl.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                <Setter Property="Width" Value="100"/>
+                            </Style>
+                        </Layout:LayoutControl.Resources>
+
+                        <Layout:LayoutGroup Orientation="Horizontal" >
+                            <Image Source="{Binding ImageSource}" Height="200" Width="150"/>
+                            <Layout:LayoutGroup Orientation="Vertical" VerticalItemSizeMode="AutoSize">
+                                <Layout:LayoutItem Header="Name:" >
+                                    <TextBlock Text="{Binding Name}"/>
+                                </Layout:LayoutItem>
+                                <Layout:LayoutItem Header="Occupation:">
+                                    <TextBlock Text="{Binding Occupation}"/>
+                                </Layout:LayoutItem>
+                                <Layout:LayoutItem Header="Genres:" >
+                                    <TextBlock Text="{Binding Genres}" />
+                                </Layout:LayoutItem>
+                                <Layout:LayoutItem Header="Born:" >
+                                    <TextBlock Text="{Binding Born}"/>
+                                </Layout:LayoutItem>
+                                <Layout:LayoutItem Header="Died:" >
+                                    <TextBlock Text="{Binding Died}"/>
+                                </Layout:LayoutItem>
+                            </Layout:LayoutGroup>
+                        </Layout:LayoutGroup>
+
+                        <Layout:LayoutItem Header="Notes:" ShowHeader="False" HeaderPosition="Top">
+                            <TextBlock Text="{Binding Notes}" Width="360"/>
+                        </Layout:LayoutItem>
+                    </Layout:LayoutControl>
+                </DataTemplate>
+            </Layout:SlideView.ItemTemplate>
+
+
+
+        </Layout:SlideView>
+
+    </Grid>
+</Page>
