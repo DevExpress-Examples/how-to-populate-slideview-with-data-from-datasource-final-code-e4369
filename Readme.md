@@ -3,7 +3,7 @@
 
 * [StandardStyles.xaml](./CS/SlideView_ex/Common/StandardStyles.xaml) (VB: [StandardStyles.xaml](./VB/SlideView_ex/Common/StandardStyles.xaml))
 * [DataStorage.cs](./CS/SlideView_ex/Data/DataStorage.cs) (VB: [DataStorage.vb](./VB/SlideView_ex/Data/DataStorage.vb))
-* [MainPage.xaml](./CS/SlideView_ex/MainPage.xaml) (VB: [MainPage.xaml.vb](./VB/SlideView_ex/MainPage.xaml.vb))
+* [MainPage.xaml](./CS/SlideView_ex/MainPage.xaml) (VB: [MainPage.xaml](./VB/SlideView_ex/MainPage.xaml))
 * [MainPage.xaml.cs](./CS/SlideView_ex/MainPage.xaml.cs) (VB: [MainPage.xaml.vb](./VB/SlideView_ex/MainPage.xaml.vb))
 <!-- default file list end -->
 # How to: Populate SlideView with Data from Datasource (Final Code)
